@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LogoKicks — Schoenen met bedrijfslogo</title>
+  <meta name="description" content="Trendy schoenen met bedrijfslogo’s. Premium materiaal. Snelle levering." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <span class="badge">Nieuw</span>
+      <p>Gratis verzending vanaf €75 · Levering 1–3 werkdagen · B2B op aanvraag</p>
+      <a class="topbar__link" href="#faq">FAQ</a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="#">
+        <span class="brand__mark">LK</span>
+        <span class="brand__name">LogoKicks</span>
+      </a>
+
+      <nav class="nav">
+        <a href="#shop">Shop</a>
+        <a href="#custom">Custom</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="header__actions">
+        <button class="iconBtn" id="themeToggle" aria-label="Thema wisselen" title="Thema">
+          <span class="icon">◐</span>
+        </button>
+        <button class="cartBtn" id="openCart" aria-label="Winkelwagen openen">
+          <span class="icon">🛒</span>
+          <span>Winkelwagen</span>
+          <span class="cartCount" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div class="hero__copy">
+        <h1>Schoenen met jouw bedrijfslogo, zonder gedoe.</h1>
+        <p>
+          Premium sneakers + subtiele branding. Ideaal voor teamkleding, events of relatiegeschenken.
+          Kies een model, upload je logo (later), en wij regelen de rest.
+        </p>
+
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#shop">Shop collectie</a>
+          <a class="btn btn--ghost" href="#custom">Custom aanvragen</a>
+        </div>
+
+        <div class="hero__trust">
+          <div class="trustCard">
+            <div class="trustCard__title">Materialen</div>
+            <div class="trustCard__text">Leer / vegan · duurzame zolen</div>
+          </div>
+          <div class="trustCard">
+            <div class="trustCard__title">Branding</div>
+            <div class="trustCard__text">Emboss · borduur · patch</div>
+          </div>
+          <div class="trustCard">
+            <div class="trustCard__title">B2B</div>
+            <div class="trustCard__text">Staffelkorting vanaf 10 paar</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        <div class="mock">
+          <div class="mock__shine"></div>
+          <div class="mock__content">
+            <div class="mock__label">Trending</div>
+            <div class="mock__title">Signature Runner</div>
+            <div class="mock__subtitle">Logo patch · cloud sole</div>
+            <div class="mock__price">vanaf €119</div>
+          </div>
+        </div>
+        <div class="hero__note">
+          <span class="dot"></span>
+          <span>Tip: voeg later productfoto’s toe in <code>assets/shoes/</code></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shop -->
+  <section class="section" id="shop">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <h2>Shop de collectie</h2>
+          <p class="muted">Zoek, filter en voeg direct toe aan je winkelwagen.</p>
+        </div>
+
+        <div class="controls">
+          <div class="inputWrap">
+            <span class="inputIcon">⌕</span>
+            <input id="search" type="search" placeholder="Zoek op model, kleur, logo-type…" autocomplete="off" />
+          </div>
+
+          <select id="filterType" aria-label="Filter op logo-type">
+            <option value="all">Alle logo-types</option>
+            <option value="patch">Patch</option>
+            <option value="emboss">Emboss</option>
+            <option value="stitch">Borduur</option>
+          </select>
+
+          <select id="filterColor" aria-label="Filter op kleur">
+            <option value="all">Alle kleuren</option>
+            <option value="white">Wit</option>
+            <option value="black">Zwart</option>
+            <option value="sand">Sand</option>
+            <option value="navy">Navy</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid" id="productGrid" aria-live="polite"></div>
+
+      <div class="section__foot">
+        <div class="pill">Secure checkout</div>
+        <div class="pill">Retour 30 dagen</div>
+        <div class="pill">BTW-factuur</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Custom -->
+  <section class="section section--alt" id="custom">
+    <div class="container custom">
+      <div class="custom__copy">
+        <h2>Custom branding voor jouw team</h2>
+        <p class="muted">
+          Wil je een eigen logo uploaden, PMS-kleuren, naamlabels of staffelkorting? Vraag een offerte aan.
+        </p>
+        <ul class="list">
+          <li>Minimale afname: <strong>10 paar</strong></li>
+          <li>Levertijd custom: <strong>2–4 weken</strong></li>
+          <li>Branding: patch, emboss, borduur, laser</li>
+        </ul>
+      </div>
+
+      <form class="card form" id="quoteForm">
+        <div class="form__row">
+          <label>
+            Naam
+            <input required name="name" placeholder="Jouw naam" />
+          </label>
+          <label>
+            E-mail
+            <input required type="email" name="email" placeholder="naam@bedrijf.nl" />
+          </label>
+        </div>
+
+        <div class="form__row">
+          <label>
+            Bedrijf
+            <input name="company" placeholder="Bedrijfsnaam" />
+          </label>
+          <label>
+            Aantal paar
+            <input name="qty" type="number" min="10" step="1" placeholder="10" />
+          </label>
+        </div>
+
+        <label>
+          Bericht
+          <textarea name="message" rows="4" placeholder="Vertel kort wat je wilt (model, kleuren, logo-type)…"></textarea>
+        </label>
+
+        <button class="btn btn--primary" type="submit">Offerte aanvragen</button>
+        <p class="tiny muted" id="quoteStatus" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="section" id="reviews">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <h2>Klanten zeggen</h2>
+          <p class="muted">Social proof placeholder — vervang door echte reviews.</p>
+        </div>
+      </div>
+
+      <div class="reviews">
+        <article class="card review">
+          <div class="review__stars">★★★★★</div>
+          <p>“Topkwaliteit en superstrakke logo patch. Ons event-team droeg ze de hele dag.”</p>
+          <div class="review__meta">
+            <span class="avatar">A</span>
+            <div>
+              <strong>Anne</strong>
+              <div class="muted tiny">Operations · Amsterdam</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card review">
+          <div class="review__stars">★★★★★</div>
+          <p>“Snel besteld, netjes verpakt. De emboss branding is subtiel en premium.”</p>
+          <div class="review__meta">
+            <span class="avatar">M</span>
+            <div>
+              <strong>Mark</strong>
+              <div class="muted tiny">HR · Utrecht</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card review">
+          <div class="review__stars">★★★★☆</div>
+          <p>“Maten kloppen. Fijn dat de checkout simpel is. Staffelkorting werkte goed.”</p>
+          <div class="review__meta">
+            <span class="avatar">S</span>
+            <div>
+              <strong>Sara</strong>
+              <div class="muted tiny">Marketing · Haarlem</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--alt" id="faq">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <h2>FAQ</h2>
+          <p class="muted">Veelgestelde vragen (pas aan naar jouw policy’s).</p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <details class="card">
+          <summary>Hoe werkt branding met bedrijfslogo’s?</summary>
+          <p>Je kiest een model en logo-type (patch/emboss/borduur). Voor B2B leveren we ook PMS-kleuren en sample-rondes.</p>
+        </details>
+        <details class="card">
+          <summary>Wat is de levertijd?</summary>
+          <p>Standaard collectie: 1–3 werkdagen. Custom: gemiddeld 2–4 weken (afhankelijk van sample en aantallen).</p>
+        </details>
+        <details class="card">
+          <summary>Kan ik retourneren?</summary>
+          <p>Standaard items: 30 dagen retour. Custom items zijn meestal uitgesloten (tenzij productiefout).</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <div class="brand brand--footer">
+          <span class="brand__mark">LK</span>
+          <span class="brand__name">LogoKicks</span>
+        </div>
+        <p class="muted tiny">© <span id="year"></span> LogoKicks. Demo template voor GitHub Pages.</p>
+      </div>
+
+      <div class="footer__links">
+        <a href="#shop">Shop</a>
+        <a href="#custom">Custom</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Product modal -->
+  <div class="modal" id="productModal" aria-hidden="true">
+    <div class="modal__backdrop" data-close="true"></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="iconBtn modal__close" data-close="true" aria-label="Sluiten">✕</button>
+      <div class="modal__body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Cart drawer -->
+  <aside class="drawer" id="cartDrawer" aria-hidden="true">
+    <div class="drawer__backdrop" data-close="true"></div>
+    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Winkelwagen">
+      <div class="drawer__head">
+        <h3>Winkelwagen</h3>
+        <button class="iconBtn" data-close="true" aria-label="Sluiten">✕</button>
+      </div>
+
+      <div class="drawer__body">
+        <div id="cartItems"></div>
+      </div>
+
+      <div class="drawer__foot">
+        <div class="totals">
+          <div class="muted">Subtotaal</div>
+          <div class="price" id="cartTotal">€0</div>
+        </div>
+        <button class="btn btn--primary btn--full" id="checkoutBtn">Afrekenen</button>
+        <p class="tiny muted">Demo checkout: geen echte betaling gekoppeld.</p>
+      </div>
+    </div>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>
